@@ -31,6 +31,8 @@ meltano add loader target-duckdb
 
 meltano run tap-carbon-intensity target-duckdb
 
+https://github.com/anelendata/tap-exchangeratehost
+
 
 - [Bracket Pair ...]()
 ### Operating System
