@@ -25,7 +25,12 @@ meltano add loader target-jsonl
 ## Step 4 ##
 meltano run tap-carbon-intensity target-jsonl
 
-### VS Code Extensions
+## Step 5 ##
+
+meltano add loader target-duckdb
+
+meltano run tap-carbon-intensity target-duckdb
+
 
 - [Bracket Pair ...]()
 ### Operating System
