@@ -16,9 +16,14 @@ The first step is to init a project by running in the integrated terminal:
 
 `meltano init .`
 
+## Step 3 ##
 
-## What's Included
-...
+meltano add extractor tap-carbon-intensity
+
+meltano add loader target-jsonl
+
+## Step 4 ##
+meltano run tap-carbon-intensity target-jsonl
 
 ### VS Code Extensions
 
