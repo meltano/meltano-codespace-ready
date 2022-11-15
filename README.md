@@ -10,9 +10,11 @@ Once in Codespaces, notice the little Dragon on the lefthandside. That's a usefu
 
 Click on it, right now your project is empty, so let us get started!
 
-The first step is to init a project by running
+The first step is to init a project by running in the integrated terminal:
 
-`meltano init .
+`mkdir meltano_project; cd meltano_project`
+
+`meltano init .`
 
 
 ## What's Included
