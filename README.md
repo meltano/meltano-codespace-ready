@@ -46,12 +46,23 @@ meltano add loader target-duckdb
 meltano run tap-csv target-duckdb
 
 ## Step 6 ##
-View the results :-) 
+./meltano_tut select_db
 
 
+## Step 7 ##
 
-https://github.com/anelendata/tap-exchangeratehost
-
-
+ meltano add mapper transform-field
+ 
+ Add a mapping like this:
+ ```   
+ mappings:
+    - name: hide-ips
+      config:
+         transformations:
+          - field_id: "ip_address"
+            tap_stream_name: "raw_customers"
+            type: "HASH"
+ ```          
+            
 - [Bracket Pair ...]()
 ### Operating System
