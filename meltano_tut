@@ -6,6 +6,7 @@ if [ "$argument" = "init" ]; then
     echo "=== Running wrapped 'meltano init' ==="
     rm meltano.yml
     meltano init new_project
+    rm new_project/README.md
     mv new_project/* .
     mkdir data
     cp codespaces_tutorial/customers.csv data/customers.csv
