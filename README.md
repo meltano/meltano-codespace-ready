@@ -6,19 +6,15 @@ This project is a starter for ...
 Click "Open on Codespaces"
 
 ## Step 2 ## 
-Once in Codespaces, notice the little Dragon on the lefthandside. That's a useful extension called ...
+Once in Codespaces, notice the little Dragon on the lefthandside. 
 
-Click on it, right now your project is empty, so let us get started!
+`./meltano_tut init` 
 
-The first step is to init a project by running in the integrated terminal:
-
-`mkdir meltano_project; cd meltano_project`
-
-`meltano init .`
+This runs a wrapped "meltano init", adding demo data to have fun with.
 
 ## Step 3 ##
 
-meltano add extractor tap-carbon-intensity
+meltano add extractor tap-csv
 
 plugins:
   extractors:
@@ -28,7 +24,7 @@ plugins:
     config:
       files:
       - entity: raw_customers
-        path: /workspaces/meltano-codespace-ready/mel_proj/customers.csv
+        path: data/customers.csv
         keys: [id]
 
 
@@ -44,8 +40,8 @@ meltano add loader target-duckdb
     variant: jwills
     pip_url: target-duckdb~=0.4
     config:
-      filepath: output/db
-      default_target_schema: public
+      filepath: output/my.duckdb
+      default_target_schema: raw
 
 meltano run tap-csv target-duckdb
 
