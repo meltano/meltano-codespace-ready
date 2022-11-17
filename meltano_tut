@@ -1,0 +1,18 @@
+#!/bin/sh
+
+argument=$1
+
+if [ "$argument" = "init" ]; then
+    echo "=== Running wrapped 'meltano init' ==="
+    rm meltano.yml
+    meltano init new_project
+    mv new_project/* *
+    mkdir data
+    cp codespaces_tutorial/customers.csv data/customers.csv
+    echo "=== Now head to the README.md and continue with step 2!"
+elif [ "$argument" = "select_db" ]; then
+    echo "=== Running select DB ==="
+    python codespaces_tutorial/select_duckdb.py
+else 
+    echo "provide one of init|select_db"
+fi
