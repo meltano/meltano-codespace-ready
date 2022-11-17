@@ -11,6 +11,10 @@ if [ "$argument" = "init" ]; then
     mkdir data
     cp codespaces_tutorial/customers.csv data/customers.csv
     echo "=== Now head to the README.md and continue with step 2!"
+elif [ "$argument" = "clear" ]; then
+    echo "=== Running clear state ==="
+    meltano state clear dev:tap-csv-to-target-duckdb
+    rm output/my.duckdb
 elif [ "$argument" = "select_db" ]; then
     echo "=== Running select DB ==="
     python codespaces_tutorial/select_duckdb.py
