@@ -64,5 +64,28 @@ meltano run tap-csv target-duckdb
             type: "HASH"
  ```          
             
-- [Bracket Pair ...]()
-### Operating System
+Run and view again!!
+
+## Step 8 ##
+
+meltano add transformer dbt-duckdb
+
+  transformers:
+  - name: dbt-duckdb
+    variant: jwills
+    pip_url: dbt-core~=1.2.0 dbt-duckdb~=1.2.0
+    config:
+      path: 'output/my.duckdb'
+      schema: analytics 
+
+
+into models/raw/sources.yml
+
+config-version: 2
+version: 2
+sources:
+  - name: raw     # the name we want to reference this source by
+    schema: raw   # the schema the raw data was loaded into
+    tables:
+      - name: customers
+
