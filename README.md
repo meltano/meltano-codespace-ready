@@ -70,6 +70,18 @@ add new plugins. So next time, consider just clicking on the dragon on the LHS a
             
 Run and view again!!
 
+=== Use Utility to add tap-carbonintensity or sth similar, and then be done...
+
+
+== Add a "job", done.
+
+
+===
+
+
+====== Tutorial Done ====
+
+
 ## Step 8 ##
 
 meltano add transformer dbt-duckdb
@@ -84,7 +96,7 @@ meltano add transformer dbt-duckdb
       schema: analytics 
 ```
 
-into models/raw/sources.yml
+into transform/models/raw/sources.yml
 
 ```
 config-version: 2
@@ -95,3 +107,25 @@ sources:
     tables:
       - name: customers
 ```
+
+## Step 9 ##
+
+into transform/models/raw/customers.sql
+
+````
+{{
+  config(
+    materialized='table'
+  )
+}}
+
+
+with base as (select *
+from {{ source('raw', 'customers') }}) 
+
+select id, first_name, last_name
+```
+
+then 
+`meltano invoke dbt-duckdb:run``
+version: 
