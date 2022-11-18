@@ -45,6 +45,10 @@ meltano add loader target-duckdb
 
 meltano run tap-csv target-duckdb
 
+## Step 5b ## 
+Now that you know there are different types of plugins, you can also use the Meltano extension to
+add new plugins. So next time, consider just clicking on the dragon on the LHS and select your mapper!
+
 ## Step 6 ##
 ./meltano_tut select_db
 
@@ -70,6 +74,7 @@ Run and view again!!
 
 meltano add transformer dbt-duckdb
 
+```
   transformers:
   - name: dbt-duckdb
     variant: jwills
@@ -77,10 +82,11 @@ meltano add transformer dbt-duckdb
     config:
       path: 'output/my.duckdb'
       schema: analytics 
-
+```
 
 into models/raw/sources.yml
 
+```
 config-version: 2
 version: 2
 sources:
@@ -88,4 +94,4 @@ sources:
     schema: raw   # the schema the raw data was loaded into
     tables:
       - name: customers
-
+```
