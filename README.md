@@ -112,7 +112,11 @@ Add a "mapper" to do slight modifications on the data we're sourcing here.
               type: "HASH"
  ```          
             
-Run and view the data again!
+Run and view the data again. You run it by calling:
+
+`meltano run tap-csv hide-ips target-duckdb`
+
+To view the data again, do: 
 
 `./meltano_tut select_db`
 
@@ -129,3 +133,7 @@ More things you can explore inside this codespace:
 - Next, try to add another tap, for instance the "tap-carbon-intensity", play around with it and push the data into either target.
 
 Once you're done, head over to the docs and check out our [great getting started tutorial](https://docs.meltano.com/) for more details, add a job and schedule to your extract & load processes, and deploy it to production.
+
+# [WIP] Advanced Tutorial #
+- Explore incremental loads instead of full syncs
+- Explore deploying to Github Actions.
