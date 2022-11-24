@@ -45,7 +45,7 @@ plugins:
         keys: [id]
 ```
 
-## Step 4 Test run your tap##
+## Step 4 Test run your tap ##
 
 
 Let's test the tap by running:
@@ -58,7 +58,7 @@ If everything works as expected, Meltano should extract the CSV and dump it as a
 
 Next add a loader to load our data into a local duckdb:
 
-`meltano add loader target-duckdb``
+`meltano add loader target-duckdb`
 
 Again add configuration into the `meltano.yml` as follows: 
 
