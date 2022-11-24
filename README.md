@@ -101,7 +101,7 @@ Add a "mapper" to do slight modifications on the data we're sourcing here.
     variant: transferwise
     pip_url: pipelinewise-transform-field
     executable: transform-field
-    mappings:
+    mappings:                                 #<<--- You just need the part starting here!
       - name: hide-ips
         config:
            transformations:
