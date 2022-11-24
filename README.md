@@ -96,14 +96,18 @@ Add a "mapper" to do slight modifications on the data we're sourcing here.
 
  Then head over to the `meltano.yml`file and add a mapping like this just below the new plugin.
 
- ```   
- mappings:
-    - name: hide-ips
-      config:
-         transformations:
-          - field_id: "ip_address"
-            tap_stream_name: "raw_customers"
-            type: "HASH"
+ ```
+   - name: transform-field
+    variant: transferwise
+    pip_url: pipelinewise-transform-field
+    executable: transform-field
+    mappings:
+      - name: hide-ips
+        config:
+           transformations:
+            - field_id: "ip_address"
+              tap_stream_name: "raw_customers"
+              type: "HASH"
  ```          
             
 Run and view the data again!
