@@ -2,6 +2,7 @@
     "name": "Codespaces Meltano CLI Starter",
     "extensions": [
         "z3z1ma.meltano-power-user",
+        "redhat.vscode-yaml",
     ],
     "dockerFile": "Dockerfile",
     "settings": {
