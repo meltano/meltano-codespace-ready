@@ -8,6 +8,7 @@ if [ "$argument" = "init" ]; then
     meltano init new_project
     rm new_project/README.md
     mv new_project/* .
+    rm new_project
     mkdir data
     cp codespaces_tutorial/customers.csv data/customers.csv
     echo "=== Now head to the README.md and continue with step 2!"
