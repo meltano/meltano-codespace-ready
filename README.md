@@ -74,7 +74,7 @@ Again add configuration into the `meltano.yml` as follows:
 
 Then you can do your first complete EL run by calling: 
 
-`meltano run tap-csv target-duckdb``
+`meltano run tap-csv target-duckdb`
 
 Perfect!
 
