@@ -62,6 +62,7 @@ Next add a loader to load our data into a local duckdb:
 
 Again add configuration into the `meltano.yml` as follows: 
 
+```
   loaders:
   - name: target-duckdb
     variant: jwills
@@ -69,6 +70,7 @@ Again add configuration into the `meltano.yml` as follows:
     config:
       filepath: output/my.duckdb
       default_target_schema: raw
+```
 
 Then you can do your first complete EL run by calling: 
 
