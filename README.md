@@ -126,4 +126,4 @@ More things you can explore inside this codespace:
 - Why don't you try to add a second output? Try to add the "target-jsonl" and do a "meltano run tap-csv target-jsonl".
 - Next, try to add another tap, for instance the "tap-carbon-intensity", play around with it and push the data into either target.
 
-Once you're done, head over to the docs and check out our great getting started tutorial for more details, add a job and schedule to your extract & load processes, and deploy it to production.
+Once you're done, head over to the docs and check out our [great getting started tutorial](https://docs.meltano.com/) for more details, add a job and schedule to your extract & load processes, and deploy it to production.
