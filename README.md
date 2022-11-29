@@ -13,6 +13,8 @@ Click "Open on Codespaces", to launch this project into a ready to use web VS-Co
 
 **Make sure to open up the README.md inside Codespaces as well.**
 
+*Note: If you at any point get an error "The user denied permission to use Service Worker", then you need to enable third-party cookies. [It's a codespaces related problem](https://github.com/orgs/community/discussions/26316).*
+
 ## Step 2 - from inside Codespaces ## 
 Inside the terminal (bottom window) run 
 
