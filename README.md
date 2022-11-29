@@ -1,11 +1,12 @@
 # Codespaces Meltano CLI Starter
 Have your *first meltano pipeline run within 5 minutes* using this repository, even if you never touched [Meltano](https://github.com/meltano) before.
 
-No install needed, just a GitHub account (and a few spare Codespaces minutes you get for free anways).
+No install needed, just a GitHub account (and a few spare Codespaces minutes you get for free anyways).
 
 Let's get started!
 
-## Step 1 ##
+## Step 1 - Open Codespaces ##
+
 Click "Open on Codespaces", to launch this project into a ready to use web VS-Code version with everything preloaded.
 
 
@@ -15,8 +16,9 @@ Click "Open on Codespaces", to launch this project into a ready to use web VS-Co
 
 *Note: If you at any point get an error "The user denied permission to use Service Worker", then you need to enable third-party cookies. [It's a codespaces related problem](https://github.com/orgs/community/discussions/26316).*
 
-## Step 2 - from inside Codespaces ## 
-Inside the terminal (bottom window) run 
+## Step 2 - Initialize Meltano Project ##
+
+Inside the terminal (bottom window) run: 
 
 `./meltano_tut init` 
 
@@ -26,7 +28,7 @@ You can take a look around:
 - there is a file "data/customers.csv", it is the one you will be loading into a datawarehouse.
 - there are now a bunch of Meltano project files, including the important "meltano.yml"
 
-## Step 3  - add your first extractor ##
+## Step 3  - Add your first extractor ##
 
 Add your first extractor to get data from the CSV. Do so by running inside the terminal:
 
@@ -47,8 +49,7 @@ plugins:
         keys: [id]
 ```
 
-## Step 4 Test run your tap ##
-
+## Step 4 - Test run your tap ##
 
 Let's test the tap by running:
 
@@ -56,7 +57,7 @@ Let's test the tap by running:
 
 If everything works as expected, Meltano should extract the CSV and dump it as a "stream" onto standard output inside the terminal.
 
-## Step 5 Add a loader ##
+## Step 5 - Add a loader ##
 
 Next add a loader to load our data into a local duckdb:
 
@@ -69,7 +70,7 @@ Again add configuration into the `meltano.yml` as follows:
   - name: target-duckdb
     variant: jwills
     pip_url: target-duckdb~=0.4
-    config:
+    config:                                 #<<--- You just need the part starting here!
       filepath: output/my.duckdb
       default_target_schema: raw
 ```
@@ -80,7 +81,8 @@ Then you can do your first complete EL run by calling:
 
 Perfect!
 
-## Step 6 View the loaded data ##
+## Step 6 - View the loaded data ##
+
 To view your data you can use our little helper:
 
 `./meltano_tut select_db`
@@ -89,7 +91,7 @@ is going to run a `SELECT * FROM public.raw_customers` on our duckdb, and write 
 
 Great! You've completed your first extract and load run.
 
-## Step 7 remover the plain text ip adresses ##
+## Step 7 - Remove the plain text ip adresses ##
 
 Notice that the data you just viewed had plain IP adresses inside of it? As a last thing,
 let us take care of that. 
@@ -122,10 +124,10 @@ To view the data again, do:
 
 `./meltano_tut select_db`
 
-## Step 8 celebrate your success ##
+## Step 8 - Celebrate your success ##
 
 That was fun and quick! Now try to run 
-`meltano draon` 
+`meltano dragon` 
 
 just for the fun of it ;)
 
@@ -134,8 +136,8 @@ More things you can explore inside this codespace:
 - Why don't you try to add a second output? Try to add the "target-jsonl" and do a "meltano run tap-csv target-jsonl".
 - Next, try to add another tap, for instance the "tap-carbon-intensity", play around with it and push the data into either target.
 
-Once you're done, head over to the docs and check out our [great getting started tutorial](https://docs.meltano.com/) for more details, add a job and schedule to your extract & load processes, and deploy it to production.
+Once you're done, head over to the docs and check out our great [getting started tutorial](https://docs.meltano.com/) for more details, add a [job](https://docs.meltano.com/reference/command-line-interface#job) and [schedule](https://docs.meltano.com/reference/command-line-interface#schedule) to your extract & load processes, and [deploy it to production](https://docs.meltano.com/guide/production).
 
 # [WIP] Advanced Tutorial #
-- Explore incremental loads instead of full syncs
+- Explore different [replication methods](https://docs.meltano.com/guide/integration#replication-methods) to run [incremental](https://docs.meltano.com/guide/integration#incremental-replication-state) loads instead of [full syncs](https://docs.meltano.com/guide/integration#full-table-replication)
 - Explore deploying to Github Actions.
