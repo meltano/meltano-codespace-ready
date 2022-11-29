@@ -191,3 +191,5 @@ Once you're done, head over to the docs and check out our great [**getting start
 
 - Explore different [replication methods](https://docs.meltano.com/guide/integration#replication-methods) to run [incremental](https://docs.meltano.com/guide/integration#incremental-replication-state) loads instead of [full syncs](https://docs.meltano.com/guide/integration#full-table-replication)
 - Explore deploying to Github Actions.
+- Explore using [environments](https://docs.meltano.com/concepts/environments) to change configuration at runtime
+- Explore [running dbt](https://docs.meltano.com/guide/transformation) and other tools with Meltano
