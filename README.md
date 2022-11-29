@@ -89,7 +89,7 @@ The config in `meltano.yml` for target-duckdb should look like this:
   - name: target-duckdb
     variant: jwills
     pip_url: target-duckdb~=0.4
-    config:                                 #<<--- You just need the part starting here!
+    config:
       filepath: output/my.duckdb
       default_target_schema: raw
 ```
