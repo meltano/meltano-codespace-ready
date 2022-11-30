@@ -15,7 +15,10 @@ Click "Open on Codespaces", to launch this project into a ready to use web VS-Co
 
 **Make sure to open up the README.md inside Codespaces as well.**
 
-*Note: If you at any point get an error "The user denied permission to use Service Worker", then you need to enable third-party cookies. [It's a codespaces related problem](https://github.com/orgs/community/discussions/26316).*
+*Notes on codespaces:* 
+- If you at any point get an error "The user denied permission to use Service Worker", then you need to enable third-party cookies. [It's a codespaces related problem](https://github.com/orgs/community/discussions/26316).
+- In our experience, codespaces work best in Chrome or Firefox, not so well in Safari.
+- Files in codespaces autosave! No need to save anything.
 
 ## Step 1 - Initialize Meltano Project
 
@@ -124,12 +127,12 @@ Add a "mapper" to do slight modifications on the data we're sourcing here.
 
 ```yaml
     mappings:
-      - name: hide-ips
-        config:
-           transformations:
-            - field_id: "ip_address"
-              tap_stream_name: "raw_customers"
-              type: "HASH"
+    - name: hide-ips
+      config:
+         transformations:
+         - field_id: "ip_address"
+           tap_stream_name: "raw_customers"
+           type: "HASH"
 ```
 
 The full configuration for the mapper `transform-field` should look like this:
@@ -137,16 +140,16 @@ The full configuration for the mapper `transform-field` should look like this:
  ```yaml
   mappers:
    - name: transform-field
-    variant: transferwise
-    pip_url: pipelinewise-transform-field
-    executable: transform-field
-    mappings:
-      - name: hide-ips
-        config:
+     variant: transferwise
+     pip_url: pipelinewise-transform-field
+     executable: transform-field
+     mappings:
+     - name: hide-ips
+       config:
            transformations:
-            - field_id: "ip_address"
-              tap_stream_name: "raw_customers"
-              type: "HASH"
+           - field_id: "ip_address"
+             tap_stream_name: "raw_customers"
+             type: "HASH"
  ```
 
 Now let's re-run our pipeline but this time with the mapper. You run it by calling:
