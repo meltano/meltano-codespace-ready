@@ -11,6 +11,8 @@ if [ "$argument" = "init" ]; then
     rm new_project
     mkdir data
     cp codespaces_tutorial/customers.csv data/customers.csv
+    meltano add environment codespace
+    meltano config meltano set default_environment codespace
     echo "=== Now head to the README.md and continue with step 2!"
 elif [ "$argument" = "clear" ]; then
     echo "=== Running clear state ==="
