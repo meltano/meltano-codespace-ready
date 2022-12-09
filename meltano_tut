@@ -2,18 +2,29 @@
 
 argument=$1
 
-if [ "$argument" = "init" ]; then
-    echo "=== Running wrapped 'meltano init' ==="
+# proj dir uuid used for tracking demo launches
+proj_dir=b54c6cfe2f8f831389a5b9ca409f410c
+
+init () {
+     echo "=== Running wrapped 'meltano init' ==="
     rm meltano.yml
-    meltano init new_project
-    rm new_project/README.md
-    mv new_project/* .
-    rm -r new_project/
+    meltano init $proj_dir
+    rm $proj_dir/README.md
+    mv $proj_dir/* .
+    rm -r $proj_dir/
     mkdir data
     cp codespaces_tutorial/customers.csv data/customers.csv
     meltano environment add codespace
     meltano config meltano set default_environment codespace
-    echo "=== Now head to the README.md and continue with step 2!"
+    echo "\n\n"   
+    echo "==============================="   
+    echo "=== Ignore the CD command. We already took care of everything."   
+    echo "=== Now head to the README.md and continue with step 2!"   
+}
+
+if [ "$argument" = "init" ]; then
+    init
+
 elif [ "$argument" = "clear" ]; then
     echo "=== Running clear state ==="
     meltano state clear dev:tap-csv-to-target-duckdb
