@@ -11,5 +11,12 @@
             "**/CODE_OF_CONDUCT.md": true,
             "**/LICENSE": true
         }
+    },
+    "features": {
+        "docker-in-docker": {
+            "version": "latest",
+            "moby": true,
+            "dockerDashComposeVersion": "v1"
+        }
     }
 }
