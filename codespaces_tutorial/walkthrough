@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+./meltano_tut init
+# get meltano yml in final state, 
+rm meltano.yml
+cp codespaces_tutorial/final_meltano.yml meltano.yml
+# run meltano install
+meltano install
+meltano run tap-csv hide-ips target-duckdb
+./meltano_tut select_db

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+meltano add extractor tap-csv
+meltano add loader target-duckdb
+meltano add mapper transform-field
+meltano dragon
