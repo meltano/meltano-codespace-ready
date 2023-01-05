@@ -1,0 +1,53 @@
+name: Pipeline for testing codespaces demo
+
+on: 
+  push:
+    branches:
+      - main
+  schedule:
+    - cron:  '30 08 * * *'
+
+jobs:
+  test_init:
+    name: "test_init"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.2.0
+
+      - name: Run test script
+        uses: devcontainers/ci@v0.2
+        env: 
+          MELTANO_SEND_ANONYMOUS_USAGE_STATS: false
+        with:
+          push: never
+          runCmd: ./meltano_tut init 
+          env: MELTANO_SEND_ANONYMOUS_USAGE_STATS
+  test_add_plugins:
+    name: "test_add_plugins"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.2.0
+
+      - name: Run test script
+        env: 
+          MELTANO_SEND_ANONYMOUS_USAGE_STATS: false
+        uses: devcontainers/ci@v0.2
+        with:
+          push: never
+          runCmd: ./meltano_tut init ; ./codespaces_tutorial/quick_add_plugins
+          env: MELTANO_SEND_ANONYMOUS_USAGE_STATS
+
+  test_run_everything:
+    name: "test_run_everything"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.2.0
+
+      - name: Run test script
+        env: 
+          MELTANO_SEND_ANONYMOUS_USAGE_STATS: false
+        uses: devcontainers/ci@v0.2
+        with:
+          push: never
+          runCmd: ./codespaces_tutorial/walkthrough
+          env: MELTANO_SEND_ANONYMOUS_USAGE_STATS
