@@ -1,6 +1,5 @@
 version: 1
 default_environment: codespace
-project_id: 38534802-00c6-4b99-a88d-d9ed7d4042ee
 environments:
 - name: dev
 - name: staging
