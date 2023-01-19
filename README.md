@@ -1,9 +1,33 @@
 # Codespaces Meltano CLI Starter
-Have your *first meltano pipeline run within 5 minutes* using this repository, even if you never touched [Meltano](https://github.com/meltano) before.
-
+## Welcome to Meltano! Run your first data pipeline within 5 minutes.
+Even if you never touched [Meltano](https://github.com/meltano) before.
 No install needed, just a GitHub account (and a few spare Codespaces minutes you get for free anyways).
 
 Let's get started!
+
+# What you're building: Let's run the final data pipeline first. #
+
+There's a csv [customers.csv](data/customers.csv) with
+- customer names, e-mail adresses and IPs 
+- you're going to extract this CSV and load it into an SQL-database.
+
+Go ahead, just run
+
+> `meltano run tap-csv hide-ips target-duckdb`
+
+And that's it, you're done. Don't believe us? You can use a helper function to check the SQL-database:
+
+> `./meltano_tut select_db`
+  
+Watch out for these things:
+1. There are no ip addresses inside the database, right? Check [customers.csv](data/customers.csv), there were there.
+2. That's because we added a "mapper" "hide-ips" that is completely customizable and in this case hashes the ips.
+3. In the console output - Meltano told you at the beginning of the log ... "Schema 'raw' does not exist." 
+4. That is because Meltano has a lot of helper functions. It e.g. creates schemas and tables, should they not already exist. 
+
+Feel free to explore the project, or dive right into building it yourself!
+
+# Let's go ahead and build it ourselves within 5 minutes #
 
 ## Step 0 - Open Codespaces
 
