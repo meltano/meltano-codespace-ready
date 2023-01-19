@@ -5,6 +5,18 @@ No install needed, just a GitHub account (and a few spare Codespaces minutes you
 
 Let's get started!
 
+## Open Codespaces (if it isn't already open)
+Click "Open on Codespaces", to launch this project into a ready to use web VS-Code version with everything preloaded.
+
+![Open Codespaces](codespaceOpen.gif)
+
+**Make sure to open up the README.md inside Codespaces as well.**
+
+*Notes on codespaces:* 
+*- If you at any point get an error "The user denied permission to use Service Worker", then you need to enable third-party cookies. [It's a codespaces related problem](https://github.com/orgs/community/discussions/26316).*
+- In our experience, codespaces work best in Chrome or Firefox, not so well in Safari.*
+*- Files in codespaces autosave! No need to save anything.*
+
 # What you're building: Let's run the final data pipeline first. #
 
 There's a csv [customers.csv](data/customers.csv) with
@@ -28,21 +40,6 @@ Watch out for these things:
 Feel free to explore the project, or dive right into building it yourself!
 
 # Let's go ahead and build it ourselves within 5 minutes #
-
-## Step 0 - Open Codespaces
-
-*If you opened this from our homepage, you can go straight to Step 1.*
-
-Click "Open on Codespaces", to launch this project into a ready to use web VS-Code version with everything preloaded.
-
-![Open Codespaces](codespaceOpen.gif)
-
-**Make sure to open up the README.md inside Codespaces as well.**
-
-*Notes on codespaces:* 
-- If you at any point get an error "The user denied permission to use Service Worker", then you need to enable third-party cookies. [It's a codespaces related problem](https://github.com/orgs/community/discussions/26316).
-- In our experience, codespaces work best in Chrome or Firefox, not so well in Safari.
-- Files in codespaces autosave! No need to save anything.
 
 ## Step 1 - Initialize Meltano Project
 
