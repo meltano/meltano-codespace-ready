@@ -1,11 +1,11 @@
-# Codespaces Meltano CLI Starter
+# Codespaces Meltano DIY Demo
 ## Welcome to Meltano! Run your first data pipeline within 5 minutes.
 Even if you never touched [Meltano](https://github.com/meltano) before.
 No install needed, just a GitHub account (and a few spare Codespaces minutes you get for free anyways).
 
 Let's get started!
 
-## Open Codespaces (if it isn't already open)
+## Open codespaces (if it isn't already open)
 Click "Open on Codespaces", to launch this project into a ready to use web VS-Code version with everything preloaded.
 
 <img src="codespaceOpen.gif" alt="" width="400"/>
@@ -20,7 +20,7 @@ Click "Open on Codespaces", to launch this project into a ready to use web VS-Co
 
 *- Files in codespaces autosave! No need to save anything.*
 
-# What you're building: Let's run the final data pipeline first. #
+# What you're building: let's run the final data pipeline first. #
 
 There's a csv [customers.csv](data/customers.csv) with
 - customer names, e-mail adresses and IPs 
@@ -44,7 +44,7 @@ Feel free to explore the project, or dive right into building it yourself!
 
 **Let's go ahead and build it ourselves within 5 minutes**
 
-# Step 1 - Initialize Meltano Project
+# Step 1 - initialize a new meltano project
 
 Inside the terminal (bottom window) run: 
 
@@ -52,7 +52,7 @@ Inside the terminal (bottom window) run:
 
 This runs a wrapped "meltano init", adding demo data for you to have fun with. This will *remove* what we preinstalled, so now we need to add a few things first.
 
-# Step 2  - Add your first extractor
+# Step 2  - add your first extractor
 
 Add your first extractor to get data from the CSV. Do so by running inside the terminal:
 
@@ -83,7 +83,7 @@ plugins:
         keys: [id]
 ```
 
-# Step 3 - Test run your tap
+# Step 3 - test run your tap
 
 Let's test the tap by running:
 
@@ -91,7 +91,7 @@ Let's test the tap by running:
 
 If everything works as expected, Meltano should extract the CSV and dump it as a "stream" onto standard output inside the terminal. 
 
-# Step 4 - Add a loader
+# Step 4 - add a loader
 
 Next add a loader to load our data into a local duckdb:
 
@@ -117,7 +117,7 @@ The config in `meltano.yml` for target-duckdb should look like this:
       default_target_schema: raw
 ```
 
-# Step 5 - Run your EL pipeline
+# Step 5 - run your EL pipeline
 
 Now you can do your first complete EL run by calling `meltano run`! 
 
@@ -125,7 +125,7 @@ Now you can do your first complete EL run by calling `meltano run`!
 
 Perfect!
 
-# Step 6 - View loaded data
+# Step 6 - view loaded data
 
 To view your data you can use our little helper:
 
@@ -136,5 +136,5 @@ This will run a `SELECT * FROM public.raw_customers` on your duckdb instance and
 Great! You've completed your first extract and load run. 🥳
 
 
-# Next Steps - Level 2 to remove IP adresses
-Next we want to start to remove the IP adresses, open up ["the Level 2 instructions"](level2.md) for that!
+# Next steps - level 2 to remove IP adresses
+Next we want to start to remove the IP adresses, open up ["the level 2 instructions"](level2.md) for that!
