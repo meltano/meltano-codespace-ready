@@ -8,12 +8,11 @@ proj_dir=b54c6cfe2f8f831389a5b9ca409f410c
 init () {
      echo "=== Running wrapped 'meltano init' ==="
     rm meltano.yml
+    rm -rf output
     meltano init $proj_dir
     rm $proj_dir/README.md
     mv $proj_dir/* .
     rm -r $proj_dir/
-    mkdir data
-    cp codespaces_tutorial/customers.csv data/customers.csv
     meltano environment add codespace
     meltano config meltano set default_environment codespace
     echo "\n\n"   
