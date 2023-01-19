@@ -10,6 +10,8 @@ Click "Open on Codespaces", to launch this project into a ready to use web VS-Co
 
 ![Open Codespaces](codespaceOpen.gif)
 
+<img src="codespaceOpen.gif" alt="" width="400"/>
+
 **Make sure to open up the README.md inside Codespaces as well.**
 
 *Notes on codespaces:* 
