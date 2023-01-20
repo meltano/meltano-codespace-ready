@@ -35,7 +35,7 @@ And that's it, you're done. Don't believe us? You can use a helper function to c
 > `./meltano_tut select_db`
   
 Watch out for these things:
-1. There are no ip addresses inside the database, right? Check [customers.csv](data/customers.csv), there were there.
+1. There are no ip addresses inside the database, right? Check [customers.csv](data/customers.csv), they were there.
 2. That's because we added a "mapper" "hide-ips" that is completely customizable and in this case hashes the ips.
 3. In the console output - Meltano told you at the beginning of the log ... "Schema 'raw' does not exist." 
 4. That is because Meltano has a lot of helper functions. It e.g. creates schemas and tables, should they not already exist. 
