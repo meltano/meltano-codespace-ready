@@ -1,11 +1,16 @@
-FROM meltano/meltano:v2.9.0-python3.10
+FROM meltano/meltano:v2.13.0-python3.10
 
 WORKDIR /home/
 
 COPY . .
 
-#RUN bash ./setup.sh
-
 # To query results.
 RUN pip install duckdb
+
 ENV PATH="$PATH:/venv/bin/meltano"
+
+ENV MELTANO_SYS_DIR_ROOT="/home/.meltano"
+
+RUN meltano install extractors
+RUN meltano install loaders
+RUN meltano install mappers

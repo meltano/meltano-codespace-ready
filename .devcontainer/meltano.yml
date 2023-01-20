@@ -37,4 +37,4 @@ plugins:
 jobs:
 - name: el_without_ips
   tasks:
-  - tap-csv hide-ips target-duckdb
+  - tap-csv hide-ips target-duckdbjobs

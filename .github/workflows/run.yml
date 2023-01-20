@@ -1,0 +1,18 @@
+name: Pipeline for running Meltano
+on: 
+  workflow_dispatch:
+#  schedule:
+#   - cron:  '30 08 * * *'
+
+jobs:
+  run_el:
+      name: "meltano_run_el"
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3.2.0
+
+        - name: Run your Meltano on schedule
+          uses: devcontainers/ci@v0.2
+          with:
+            push: never
+            runCmd: meltano run el_without_ips
