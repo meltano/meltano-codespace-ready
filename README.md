@@ -12,7 +12,7 @@ Click "Open on Codespaces", to launch this project into a ready to use web VS-Co
 
 **Make sure to open up the README.md inside Codespaces as well.**
 
-*Notes on codespaces:* 
+*Notes on codespaces:*
 
 *- If you at any point get an error "The user denied permission to use Service Worker", then you need to enable third-party cookies. [It's a codespaces related problem](https://github.com/orgs/community/discussions/26316).*
 
@@ -23,7 +23,7 @@ Click "Open on Codespaces", to launch this project into a ready to use web VS-Co
 # What you're building: let's run the final data pipeline first. #
 
 There's a csv [customers.csv](data/customers.csv) with
-- customer names, e-mail adresses and IPs 
+- customer names, e-mail adresses and IPs
 - you're going to extract this CSV and load it into an SQL-database.
 
 Go ahead, just run
@@ -33,12 +33,12 @@ Go ahead, just run
 And that's it, you're done. Don't believe us? You can use a helper function to check the SQL-database:
 
 > `./meltano_tut select_db`
-  
+
 Watch out for these things:
 1. There are no ip addresses inside the database, right? Check [customers.csv](data/customers.csv), they were there.
 2. That's because we added a "mapper" called "hide-ips" that is completely customizable and in this case hashes the IP addresses.
-3. In the console output - Meltano told you at the beginning of the log ... "Schema 'raw' does not exist." 
-4. That is because Meltano has a lot of helper functions. It e.g. creates schemas and tables, should they not already exist. 
+3. In the console output - Meltano told you at the beginning of the log ... "Schema 'raw' does not exist."
+4. That is because Meltano has a lot of helper functions. It e.g. creates schemas and tables, should they not already exist.
 
 Feel free to explore the project, or dive right into building it yourself!
 
@@ -46,9 +46,9 @@ Feel free to explore the project, or dive right into building it yourself!
 
 # Step 1 - initialize a new meltano project
 
-Inside the terminal (bottom window) run: 
+Inside the terminal (bottom window) run:
 
-> `./meltano_tut init` 
+> `./meltano_tut init`
 
 This runs a wrapped "meltano init", adding demo data for you to have fun with. This will *remove* what we preinstalled, so now we need to add a few things first.
 
@@ -89,7 +89,7 @@ Let's test the tap by running:
 
 > `meltano invoke tap-csv`
 
-If everything works as expected, Meltano should extract the CSV and dump it as a "stream" onto standard output inside the terminal. 
+If everything works as expected, Meltano should extract the CSV and dump it as a "stream" onto standard output inside the terminal.
 
 # Step 4 - add a loader
 
@@ -119,7 +119,7 @@ The config in `meltano.yml` for target-duckdb should look like this:
 
 # Step 5 - run your EL pipeline
 
-Now you can do your first complete EL run by calling `meltano run`! 
+Now you can do your first complete EL run by calling `meltano run`!
 
 > `meltano run tap-csv target-duckdb`
 
@@ -135,6 +135,7 @@ This will run a `SELECT * FROM public.raw_customers` on your duckdb instance and
 
 Great! You've completed your first extract and load run. 🥳
 
+PS. If you liked what you saw, don't forget to [star us on GitHub](https://github.com/meltano/meltano) and consider joining our [Slack community](https://meltano.com/slack)!
 
 # Next steps - level 2 to remove IP adresses
 Next we want to start to remove the IP adresses, open up ["the level 2 instructions"](level2.md) for that!
