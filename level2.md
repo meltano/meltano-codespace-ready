@@ -79,4 +79,4 @@ That was fun and quick! Now try to run
 just for the fun of it! 🐉
 
 # Next steps - level 3 for more
-Next we want to explore the rest of the demo and go further, open up ["the level 3 instructions"](level2.md) for that!
+Next we want to explore the rest of the demo and go further, open up ["the level 3 instructions"](level3.md) for that!
