@@ -15,10 +15,10 @@ jobs:
     name: "test_init"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Run test script
-        uses: devcontainers/ci@v0.2
+        uses: devcontainers/ci@8bf61b26e9c3a98f69cb6ce2f88d24ff59b785c6 # v0.3.1900000417
         env:
           MELTANO_SEND_ANONYMOUS_USAGE_STATS: false
         with:
@@ -29,12 +29,12 @@ jobs:
     name: "test_add_plugins"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Run test script
         env:
           MELTANO_SEND_ANONYMOUS_USAGE_STATS: false
-        uses: devcontainers/ci@v0.2
+        uses: devcontainers/ci@8bf61b26e9c3a98f69cb6ce2f88d24ff59b785c6 # v0.3.1900000417
         with:
           push: never
           runCmd: ./meltano_tut init ; ./codespaces_tutorial/quick_add_plugins
@@ -44,12 +44,12 @@ jobs:
     name: "test_run_everything"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Run test script
         env:
           MELTANO_SEND_ANONYMOUS_USAGE_STATS: false
-        uses: devcontainers/ci@v0.2
+        uses: devcontainers/ci@8bf61b26e9c3a98f69cb6ce2f88d24ff59b785c6 # v0.3.1900000417
         with:
           push: never
           runCmd: ./codespaces_tutorial/walkthrough
