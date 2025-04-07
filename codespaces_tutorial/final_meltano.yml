@@ -33,3 +33,5 @@ plugins:
           - field_id: "ip_address"
             tap_stream_name: "raw_customers"
             type: "HASH"
+venv:
+  backend: uv
