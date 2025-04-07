@@ -1,20 +1,17 @@
 {
     "name": "Codespaces Meltano CLI Starter",
-    "extensions": [
-        "z3z1ma.meltano-power-user",
-        "redhat.vscode-yaml",
-    ],
-    "dockerFile": "Dockerfile",
-    "settings": {
-        "workbench.editorAssociations": {   
-            "*.md": "vscode.markdown.preview.editor",
-        },
-    },
-    "features": {
-        "docker-in-docker": {
-            "version": "latest",
-            "moby": true,
-            "dockerDashComposeVersion": "v1"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "z3z1ma.meltano-power-user",
+                "redhat.vscode-yaml"
+            ],
+            "settings": {
+                "workbench.editorAssociations": {
+                    "*.md": "vscode.markdown.preview.editor"
+                }
+            }
         }
-    }
+    },
+    "dockerFile": "Dockerfile"
 }

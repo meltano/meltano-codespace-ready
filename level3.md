@@ -21,7 +21,7 @@ delete "1,Ethe,Book,ebook0@twitter.com,67.61.243.220"
 ... Loading 28 rows into 'raw."raw_customers"'
 ...  BUt Ethe is still there..
 
-Add a line: 
+Add a line:
 "30,Ethe_is_back,Book,ebook0@twitter.com,67.61.243.220"
 
 meltano run el_without_ips
@@ -59,7 +59,7 @@ delete: 29,Edie,Corderoy,ecorderoys@nationalgeographic.com,1
       default_target_schema: raw
       add_metadata_columns: True
       hard_delete: True
-    
+
 
 
 
@@ -68,14 +68,14 @@ delete: 29,Edie,Corderoy,ecorderoys@nationalgeographic.com,1
 
 ## Deploying Meltano into Github Actions.
 
-Finally, we will deploy our little demo into Github Actions. 
+Finally, we will deploy our little demo into Github Actions.
 
 *Warning*: This will eat up your GitHub Actions minutes, you should have free ones, but just take care.
 
 ```yaml
 name: Pipeline for testing codespaces demo
 
-on: 
+on:
   workflow_dispatch:
   schedule:
     - cron:  '30 08 * * *'
@@ -106,7 +106,7 @@ run_el:
           runCmd: meltano run el_without_ips
 ```yaml
 
-This runs now at 8:30 every morning, 
+This runs now at 8:30 every morning,
 OR if you click on it. Try it out!
 
 (insert image!)
@@ -114,12 +114,12 @@ OR if you click on it. Try it out!
 
 ## Next Steps
 
-More things you can explore inside this codespace: 
+More things you can explore inside this codespace:
 
   * **Meltano VS Code Extension**
 
-    Do you see this little dragon on the left hand side? 
-    
+    Do you see this little dragon on the left hand side?
+
     ![Dragon](/meltano-ext.png)
 
     That's the [Meltano VS Code extension](https://marketplace.visualstudio.com/items?itemName=z3z1ma.meltano-power-user). It allows you to view and add all possible taps & targets we currently have on Meltano Hub. Take a look at them!

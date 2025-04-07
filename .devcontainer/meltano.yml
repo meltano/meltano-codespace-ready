@@ -30,11 +30,13 @@ plugins:
     mappings:
     - name: hide-ips
       config:
-         transformations:
-         - field_id: "ip_address"
-           tap_stream_name: "raw_customers"
-           type: "HASH"
+        transformations:
+        - field_id: ip_address
+          tap_stream_name: raw_customers
+          type: HASH
 jobs:
 - name: el_without_ips
   tasks:
-  - tap-csv hide-ips target-duckdbjobs
+  - tap-csv hide-ips target-duckdb
+venv:
+  backend: uv
