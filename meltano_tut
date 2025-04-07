@@ -15,6 +15,7 @@ init () {
     rm -r $proj_dir/
     meltano environment add codespace
     meltano config meltano set default_environment codespace
+    meltano config meltano set venv.backend uv
     echo "\n\n"
     echo "==============================="
     echo "=== Ignore any next steps from above. We already took care of everything."

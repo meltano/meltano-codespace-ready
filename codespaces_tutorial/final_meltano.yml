@@ -18,7 +18,7 @@ plugins:
   loaders:
   - name: target-duckdb
     variant: jwills
-    pip_url: target-duckdb~=0.4
+    pip_url: target-duckdb~=0.8
     config:
       filepath: output/my.duckdb
       default_target_schema: raw
@@ -33,3 +33,5 @@ plugins:
           - field_id: "ip_address"
             tap_stream_name: "raw_customers"
             type: "HASH"
+venv:
+  backend: uv
