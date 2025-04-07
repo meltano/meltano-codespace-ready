@@ -1,0 +1,13 @@
+{
+  "plugin_type": "mappers",
+  "name": "transform-field",
+  "namespace": "transform_field",
+  "variant": "transferwise",
+  "label": "Pipelinewise Transform Field",
+  "docs": "https://hub.meltano.com/mappers/transform-field--transferwise",
+  "repo": "https://github.com/transferwise/pipelinewise-transform-field",
+  "pip_url": "pipelinewise-transform-field",
+  "executable": "transform-field",
+  "description": "A Pipelinewise compatible map transformer plugin for transformations between Singer taps and targets.",
+  "logo_url": "https://hub.meltano.com/assets/logos/mappers/transferwise.png"
+}

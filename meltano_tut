@@ -15,10 +15,10 @@ init () {
     rm -r $proj_dir/
     meltano environment add codespace
     meltano config meltano set default_environment codespace
-    echo "\n\n"   
-    echo "==============================="   
-    echo "=== Ignore any next steps from above. We already took care of everything."   
-    echo "=== Now head to the README.md and continue with step 2!"   
+    echo "\n\n"
+    echo "==============================="
+    echo "=== Ignore any next steps from above. We already took care of everything."
+    echo "=== Now head to the README.md and continue with step 2!"
 }
 
 if [ "$argument" = "init" ]; then
@@ -31,6 +31,6 @@ elif [ "$argument" = "clear" ]; then
 elif [ "$argument" = "select_db" ]; then
     echo "=== Running select DB ==="
     python codespaces_tutorial/select_duckdb.py
-else 
+else
     echo "provide one of init|select_db"
 fi

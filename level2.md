@@ -66,15 +66,15 @@ Now simply run the "job":
 
 # Step 5 - Check that it worked
 
-To view the data again, run the helper again: 
+To view the data again, run the helper again:
 
 > `./meltano_tut select_db`
 
 # Step 6 - Celebrate your success 🎉
 
-That was fun and quick! Now try to run 
+That was fun and quick! Now try to run
 
-> `meltano dragon` 
+> `meltano dragon`
 
 just for the fun of it! 🐉
 
